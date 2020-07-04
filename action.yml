@@ -220,7 +220,7 @@ actions:
     filters:
     - filtertype: pattern
       kind: prefix
-      value: sphere-
+      value: metricbeat-
       exclude:
     - filtertype: age
       source: name
