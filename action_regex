@@ -1,0 +1,251 @@
+---
+# Remember, leave a key empty if there is no value.  None will be a string,
+# not a Python "NoneType"
+#
+# Also remember that all examples have 'disable_action' set to True.  If you
+# want to use this action as a template, be sure to set this to False after
+# copying it...DELETE ALL Indiceses are 5 days older
+actions:
+  1:
+    action: delete_indices
+    description: >-
+      Delete indices older than hour
+    options:
+      ignore_empty_list: True
+      timeout_override:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^alarm'
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit: days
+      unit_count: 5
+
+  2:
+    action: delete_indices
+    description: >-
+      Delete indices older than hour
+    options:
+      ignore_empty_list: True
+      timeout_override:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^all_heatmap'
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit: days
+      unit_count: 5
+
+  3:
+    action: delete_indices
+    description: >-
+      Delete indices older than hour
+    options:
+      ignore_empty_list: True
+      timeout_override:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^database'
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit: days
+      unit_count: 5
+
+
+  4:
+    action: delete_indices
+    description: >-
+      Delete indices older than hour
+    options:
+      ignore_empty_list: True
+      timeout_override:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^endpoint'
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit: days
+      unit_count: 5
+
+  5:
+    action: delete_indices
+    description: >-
+      Delete indices older than hour
+    options:
+      ignore_empty_list: True
+      timeout_override:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^envoy'
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit: days
+      unit_count: 5
+
+  6:
+    action: delete_indices
+    description: >-
+      Delete indices older than hour
+    options:
+      ignore_empty_list: True
+      timeout_override:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^http'
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit: days
+      unit_count: 5
+
+  7:
+    action: delete_indices
+    description: >-
+      Delete indices older than hour
+    options:
+      ignore_empty_list: True
+      timeout_override:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^instance'
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit: days
+      unit_count: 5
+
+  8:
+    action: delete_indices
+    description: >-
+      Delete indices older than hour
+    options:
+      ignore_empty_list: True
+      timeout_override:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^network'
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit: days
+      unit_count: 5
+  9:
+    action: delete_indices
+    description: >-
+      Delete indices older than hour
+    options:
+      ignore_empty_list: True
+      timeout_override:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^profile'
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit: days
+      unit_count: 5
+  10:
+    action: delete_indices
+    description: >-
+      Delete indices older than hour
+    options:
+      ignore_empty_list: True
+      timeout_override:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^register'
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit: days
+      unit_count: 5
+  11:
+    action: delete_indices
+    description: >-
+      Delete indices older than hour
+    options:
+      ignore_empty_list: True
+      timeout_override:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^segment'
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit: days
+      unit_count: 5
+  12:
+    action: delete_indices
+    description: >-
+      Delete indices older than hour
+    options:
+      ignore_empty_list: True
+      timeout_override:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^service'
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit: days
+      unit_count: 5
+  13:
+    action: delete_indices
+    description: >-
+      Delete indices older than hour
+    options:
+      ignore_empty_list: True
+      timeout_override:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+    - filtertype: pattern
+      kind: regex
+      value: '^top'
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit: days
+      unit_count: 5
+
