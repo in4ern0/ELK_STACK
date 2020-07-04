@@ -1,0 +1,48 @@
+#Ansible Playbook
+---
+
+- name: Ansible Curator ElK stack
+  hosts: ansible
+  tasks:
+
+    - name: RPM import key
+      rpm_key:
+       state: present
+       key: https://packages.elastic.co/GPG-KEY-elasticsearch
+
+    - name: Copy repo file
+      copy:
+       src: ./curator.repo
+       dest: /etc/yum.repos.d/
+
+    - name: Install Elastic Curator
+      yum:
+       name: elasticsearch-curator
+       state: present
+
+    - name: Pip install ELK curator
+#      ignore_errors: True
+      pip:
+       name: elasticsearch-curator
+
+    - name: Pip Upgrade
+      pip:
+       name: pip
+       extra_args: --upgrade
+
+    - name: Copy config file
+      copy:
+       src: ./config.yml
+       dest: /srv/
+
+    - name: Copy action file
+      copy:
+       src: ./action.yml
+       dest: /srv/
+
+    - name: Set Cronjob "0 0 * * *"
+      cron:
+       name: Set Cronjob at "At 00:00."
+       minute: "0"
+       hour: "0"
+       job: "/usr/bin/curator --config /srv/config.yml /srv/action.yml >/dev/null 2>&1"
