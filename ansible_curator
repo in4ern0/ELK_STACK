@@ -20,6 +20,10 @@
        name: elasticsearch-curator
        state: present
 
+    - name: Install Python pip
+      yum:
+       name: python-pip
+
     - name: Pip install ELK curator
 #      ignore_errors: True
       pip:
