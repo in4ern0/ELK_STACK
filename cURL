@@ -1,0 +1,11 @@
+curl 'http://localhost:9200/_cat/health?v&pretty'  -  Health status
+curl 'http://localhost:9200/_cat/nodes?v&pretty'   -  Info about Nodes
+curl -GET 'http://localhost:9200/_cat/indices?v'   -  Info about Indeces
+curl -XDELETE 'localhost:9200/gravitee-*' or *     -  Delete all indices
+curl -XDELETE 'localhost:9200/products/mobiles/1?pretty'                   - Delete from products mobiles ID "1" Document
+curl -XPUT 'localhost:9200/products?&pretty'       -  Add new Indeces called 'products'
+curl -XPUT 'localhost:9200/products/mobiles/1?pretty' -d'                  -  Add 'mobiles' unique id '1' for products index
+curl -XGET 'localhost:9200/products/mobiles/1?pretty&_source=name,reviews' - Search only "name" and "reviews"
+curl -XPOST 'localhost:9200/products/mobiles/1/_update?pretty'             - Update some credentials from products mobiles ID "1"  or U can add new credentials with this request.
+curl -i -XHEAD 'localhost:9200/products/mobiles/2?pretty'(HTTP/1.1 200 OK or HTTP/1.1 404 Not Found) - This Request response http health status and find document exists or not.
+curl -XGET 'localhost:9200/_mget?pretty'           - multiple request
