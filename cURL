@@ -10,3 +10,4 @@ curl -XPOST 'localhost:9200/products/mobiles/1/_update?pretty'             - Upd
 curl -i -XHEAD 'localhost:9200/products/mobiles/2?pretty'(HTTP/1.1 200 OK or HTTP/1.1 404 Not Found) - This Request response http health status and find document exists or not.
 curl -XGET 'localhost:9200/_mget?pretty'           - multiple request
 curl -XGET 'localhost:9200/customers,products/_search?pretty'  - multiplesearch
+curl -XGET 'localhost:9200/customers/_search?pretty' -d'  -  in customers search
