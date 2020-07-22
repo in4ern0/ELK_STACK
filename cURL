@@ -11,3 +11,5 @@ curl -i -XHEAD 'localhost:9200/products/mobiles/2?pretty'(HTTP/1.1 200 OK or HTT
 curl -XGET 'localhost:9200/_mget?pretty'           - multiple request
 curl -XGET 'localhost:9200/customers,products/_search?pretty'  - multiplesearch
 curl -XGET 'localhost:9200/customers/_search?pretty' -d'  -  in customers search
+curl http://127.0.0.1:9200/_aliases?pretty             - aliases
+curl http://127.0.0.1:9200/test_index/_settings?pretty - index details
