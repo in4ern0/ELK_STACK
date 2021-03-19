@@ -8,9 +8,11 @@ curl -XPUT 'localhost:9200/products/mobiles/1?pretty' -d'                  -  Ad
 curl -XGET 'localhost:9200/products/mobiles/1?pretty&_source=name,reviews' - Search only "name" and "reviews"
 curl -XPOST 'localhost:9200/products/mobiles/1/_update?pretty'             - Update some credentials from products mobiles ID "1"  or U can add new credentials with this request.
 curl -XPOST 'localhost:9200/products/bulk?pretty' -d                       - Add multi
+curl -XPOST 'localhost:9200/products/shoes/_bulk?pretty' -d                - modify document shoes
+curl -XPOST 'localhost:9200/products/shoes/_bulk?pretty' -H 'Content-Type: application/json' -d ' - modify 
 curl -i -XHEAD 'localhost:9200/products/mobiles/2?pretty'(HTTP/1.1 200 OK or HTTP/1.1 404 Not Found) - This Request response http health status and find document exists or not.
 curl -XGET 'localhost:9200/_mget?pretty'           - two doc one go
-curl -XGET 'localhost:9200/customers,products/_search?pretty'  - multiplesearch
+curl -XGET 'localhost:9200/customers,products/_search?pretty'  - multiple search
 curl -XGET 'localhost:9200/customers/_search?pretty' -d'  -  in customers search
 curl http://127.0.0.1:9200/_aliases?pretty             - aliases
 curl http://127.0.0.1:9200/test_index/_settings?pretty - index details
