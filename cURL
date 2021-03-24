@@ -1,6 +1,6 @@
 curl 'http://localhost:9200/_cat/health?v&pretty'  -  Health status
 curl 'http://localhost:9200/_cat/nodes?v&pretty'   -  Info about Nodes
-curl -GET 'http://localhost:9200/_cat/indices?v'   -  Info about Indeces
+curl -XGET 'http://localhost:9200/_cat/indices?v'   -  Info about Indeces
 curl -XDELETE 'localhost:9200/gravitee-*' or *     -  Delete all indices
 curl -XDELETE 'localhost:9200/products/mobiles/1?pretty'                   - Delete from products mobiles ID "1" Document
 curl -XPUT 'localhost:9200/products?&pretty'       -  Add new Indeces called 'products'
