@@ -15,6 +15,12 @@ vim /etc/pam.d/common-session-noninteractive -          session required        
 
 
 
+
+Elasticsearch malfunctions when the system is swapping memory. It is crucial for the health of the node that none of the JVM is ever swapped out to disk. The following steps show how to set the bootstrap.memory_lock setting to true so Elasticsearch will lock the process address space into RAM. This prevents any Elasticsearch memory from being swapped out.
+
+bootstrap.memory_lock: true
+
+
 cat > /etc/systemd/system/elasticsearch.service.d/elasticsearch.conf << EOF
 [Service]
 LimitMEMLOCK=infinity
