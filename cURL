@@ -1,5 +1,6 @@
 /usr/share/elasticsearch/bin/elasticsearch-reset-password -i -u elastic - set own password for user elastic
 
+curl -k -u elastic:jpICIKMmDv8=asd https://localhost:9200
 curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic:jpICIKMmDv8=RwqGQnhh 'https://localhost:9200/_cat/health?v&pretty'
 curl 'http://localhost:9200/_cat/health?v&pretty'  -  Health status
 curl 'http://localhost:9200/_cat/nodes?v&pretty'   -  Info about Nodes
